@@ -17,6 +17,11 @@ Vunerabilites:
 
 - Use https to encrypt the whole request including headers.
 - Requests logged with authorization header will expose the credentials.
-- Avoid in Production env and in public networks.
+- Avoid in Production env
+- Avoid in public networks.
+- Avoid in Front end applications (Web, mobile, etc)
+- Can't revoke or expire credentials without changing password.
+- No session control, replay attacks possible.
+- Credentials sent with every request increases exposure risk.
 
 
