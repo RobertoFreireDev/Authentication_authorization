@@ -28,6 +28,9 @@ builder.Services.AddAuthentication(options =>
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidateAudience = true,
         ValidAudience = builder.Configuration["Jwt:Audience"],
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.FromMinutes(5),
+        ValidAlgorithms = new[] { SecurityAlgorithms.HmacSha256 }
     };
 });
 

@@ -51,11 +51,11 @@ Advantages:
 Vunerabilites:
 
 - data is in Base64 format which is easily decoded.
-- Use https to encrypt the whole request including headers.
-- Use short expiration time for avoiding token reuse.
+- Use https
+- Use short expiration time for token.
+- Use longer expiration time for refresh token.
 - Claims are visible to anyone who has the token. https://www.jwt.io/
-- Store tokens securely (HttpOnly cookies, secure storage, etc)
-- Expire credentials with a predetermined time
+- Store tokens securely to avoid XSS and CSRF attacks.
 
 # Token Storage
 
@@ -69,7 +69,8 @@ Vunerabilites:
 ## Cookies
 
 - HttpOnly flag -> not accessible via javascript
-- Vunerable to CSRF attacks
+- Secure flag
+- Vunerable to CSRF attacks (Use same site flag to prevent that)
 
 # Notes:
 
