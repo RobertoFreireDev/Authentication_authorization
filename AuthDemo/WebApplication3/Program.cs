@@ -59,7 +59,7 @@ string GenerateJwt(string username, IConfiguration config)
         [
             new Claim(ClaimTypes.Name, username),
         ]),
-        Expires = DateTime.UtcNow.AddHours(2),
+        Expires = DateTime.UtcNow.AddMinutes(15),
         Issuer = config["Jwt:Issuer"],
         Audience = config["Jwt:Audience"],
         SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature)
