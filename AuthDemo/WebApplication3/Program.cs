@@ -24,8 +24,10 @@ builder.Services.AddAuthentication(options =>
     {
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = key,
-        ValidateIssuer = false,
-        ValidateAudience = false
+        ValidateIssuer = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidateAudience = true,
+        ValidAudience = builder.Configuration["Jwt:Audience"],
     };
 });
 
@@ -58,6 +60,8 @@ string GenerateJwt(string username, IConfiguration config)
             new Claim(ClaimTypes.Name, username),
         ]),
         Expires = DateTime.UtcNow.AddHours(2),
+        Issuer = config["Jwt:Issuer"],
+        Audience = config["Jwt:Audience"],
         SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature)
     };
     var token = tokenHandler.CreateToken(tokenDescriptor);

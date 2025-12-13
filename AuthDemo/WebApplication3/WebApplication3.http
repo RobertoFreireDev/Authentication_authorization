@@ -1,5 +1,5 @@
 @WebApplication3_HostAddress = http://localhost:5289
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzY1NTg3NTQzLCJleHAiOjE3NjU1OTQ3NDMsImlhdCI6MTc2NTU4NzU0M30.JClTA6QwIbrJF5p71g_ofX-eMq4pUFqVOaEWclo2Qw4
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzY1NTg4MjAzLCJleHAiOjE3NjU1OTU0MDMsImlhdCI6MTc2NTU4ODIwMywiaXNzIjoiV2ViQXBwbGljYXRpb24zIiwiYXVkIjoiV2ViQXBwbGljYXRpb24zIn0.EgSDARY_0cBjYMADEPXHthOQW1QpeYK6nnr4_gjYnYw
 
 ### LOGIN — Get JWT token
 POST {{WebApplication3_HostAddress}}/login
