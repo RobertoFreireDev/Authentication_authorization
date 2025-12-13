@@ -1,0 +1,15 @@
+@WebApplication3_HostAddress = http://localhost:5289
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwibmJmIjoxNzY1NTg3NTQzLCJleHAiOjE3NjU1OTQ3NDMsImlhdCI6MTc2NTU4NzU0M30.JClTA6QwIbrJF5p71g_ofX-eMq4pUFqVOaEWclo2Qw4
+
+### LOGIN — Get JWT token
+POST {{WebApplication3_HostAddress}}/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "testpassword"
+}
+
+### SECURE — Requires JWT
+GET {{WebApplication3_HostAddress}}/secure
+Authorization: Bearer {{token}}

@@ -24,4 +24,6 @@ Vunerabilites:
 - No session control, replay attacks possible.
 - Credentials sent with every request increases exposure risk.
 
+# Bearer JWT
+
 

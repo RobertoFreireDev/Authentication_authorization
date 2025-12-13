@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebAppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{AD05253C-FA5C-4300-A4A6-11A171027BB9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bearer", "Bearer", "{B330A45A-8DCC-43BF-9EF5-06B9F933FFB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "WebApplication3\WebApplication3.csproj", "{666C6822-C117-4D4F-9A16-6929826EA10C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,10 @@ Global
 		{AD05253C-FA5C-4300-A4A6-11A171027BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD05253C-FA5C-4300-A4A6-11A171027BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD05253C-FA5C-4300-A4A6-11A171027BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{666C6822-C117-4D4F-9A16-6929826EA10C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{666C6822-C117-4D4F-9A16-6929826EA10C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{666C6822-C117-4D4F-9A16-6929826EA10C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{666C6822-C117-4D4F-9A16-6929826EA10C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FACB3787-0A84-414E-B241-C2509C5956DA} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{AD05253C-FA5C-4300-A4A6-11A171027BB9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{666C6822-C117-4D4F-9A16-6929826EA10C} = {B330A45A-8DCC-43BF-9EF5-06B9F933FFB9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A263F9C8-C515-4D68-AD25-D986076DE573}
