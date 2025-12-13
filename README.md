@@ -56,3 +56,34 @@ Vunerabilites:
 - Claims are visible to anyone who has the token. https://www.jwt.io/
 - Store tokens securely (HttpOnly cookies, secure storage, etc)
 - Expire credentials with a predetermined time
+
+# Token Storage
+
+## Local Storage
+
+- Easy to use
+- Javascript access
+- Vunerable to XSS attacks
+- Scripts can steal tokens
+
+## Cookies
+
+- HttpOnly flag -> not accessible via javascript
+- Vunerable to CSRF attacks
+
+# Notes:
+
+## localStorage vs sessionStorage
+
+| Feature  | localStorage | sessionStorage |
+|--------|-------------|----------------|
+| Lifespan | **Persistent**: Data has no expiration time and remains after the browser is closed and reopened. | **Temporary**: Data is available only for the duration of the page session and is deleted when the tab/window is closed. It survives a page refresh but not a new tab. |
+| Scope | Shared across all tabs/windows from the same origin (protocol, domain, and port). | Isolated to the specific tab/window that created it. A new tab for the same website has its own separate `sessionStorage`. |
+
+## XSS attack:
+
+Both localStorage and sessionStorage are highly vulnerable to Cross-Site Scripting (XSS) attacks because any JavaScript code running on the page, including malicious scripts, has full access to the data stored within them.
+
+## CSRF (Cross-Site Request Forgery) attack:
+
+CSRF (Cross-Site Request Forgery) attacks exploit how browsers automatically send session cookies with requests to a logged-in site, tricking the user's browser into sending unauthorized, state-changing commands (like transferring money or changing settings) to that site, as if the user initiated them
