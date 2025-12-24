@@ -72,6 +72,83 @@ Vunerabilites:
 - Secure flag
 - Vunerable to CSRF attacks (Use same site flag to prevent that)
 
+# OAuth 2.0
+
+OAuth 2.0 is not authentication. It is authorization framework.
+
+OAuth grant access to data that lives somewhere else without sharing password.
+
+## Client credentials
+
+Machine-to-machine. No user involved
+
+##  Authorization code + PKCE
+
+- Resource Owner -> User who owns the data
+- Client -> Application that wants to access the data
+- Authorization server -> Server that issues access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+- Resource server -> Server that hosts the protected data and accepts access tokens to allow access to the data.
+
+Note: don't keep secrets on client side: mobile app, SPA application, etc.
+
+### Example: User opens a developer dashboard app that displays GitHub activity
+
+- Resource Owner -> The GitHub user who owns the data and grants permission.
+- Client -> The dashboard application requesting access to the user’s GitHub data
+- Authorization Server -> GitHub OAuth service that authenticates the user and issues access tokens
+- Resource Server -> GitHub API that hosts the data and accepts access tokens to return it
+
+Steps:
+
+1. User opens a developer dashboard app that displays GitHub activity.
+2. The app asks the user to sign in with GitHub
+3. The user is redirected to GitHub’s OAuth Authorization Server and logs in.
+4. GitHub shows a consent screen asking the user to allow the app to access specific data (repositories, commits, issues).
+5. After approval, GitHub’s Authorization Server issues an access token to the dashboard app.
+6. The dashboard app uses the access token to call the GitHub API
+7. The Resource Server validates the token and returns the user’s GitHub data.
+8. The dashboard app displays the GitHub dashboard (repositories, commits, issues) to the user.
+
+### Build OAuth request
+
+- URL : oauth authorize endpoint
+- ClientId: your client app id. Value provided by authorization server when you register your app
+- RedirectUri: where to send the user after authorization. Must match exactly the registered value. no wildcards.
+- ResponseType: Request an authorization code
+- Scope: permissions your app is requesting
+- State: random string to prevent CSRF attacks
+
+Notes: 
+
+- State parameter should be random and unique for each request. Store it temporarily (in memory or session storage) to validate it when the user is redirected back to your app.
+- Without state, an attacker could start the flow in their browser and trick the user into authorizing a request they did not intend, leading to unauthorized actions.
+- PKCE (Proof Key for Code Exchange) is extension to OAuth 2.0 to prevent authorization code interception attacks.
+
+### Exchanging the code for tokens. Server to server request
+
+- URL: oauth token endpoint
+- GrantType: authorization_code
+- Code: the authorization code received from the authorization server
+- RedirectUri: callback URL.
+- ClientId: your client app id. 
+- ClientSecret: your client secret
+
+Note: 
+
+- Never share client secret on client side applications. If it is a client side application (mobile for example), use PKCE instead of client secret.
+
+### Use token to get data from resource server
+
+- Token expires fast. Example: 1 hour. Refresh token can last for days.
+- Use refresh token to get new access token without user interaction. Treat like password. Don't use refresh token on client side applications or log token.
+- Send bearer token to resource server in Authorization header.
+
+## PKCE. Use everywhere (recommended for client and server apps)
+
+# OpenId 
+
+OpenId is an authentication standard built on top of OAuth 2.0
+
 # Notes:
 
 ## localStorage vs sessionStorage
