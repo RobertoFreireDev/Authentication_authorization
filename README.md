@@ -80,7 +80,7 @@ OAuth grant access to data that lives somewhere else without sharing password.
 
 ## Client credentials
 
-Machine-to-machine. No user involved
+Machine-to-machine. No user involved. Example: Scheduled job to sync data
 
 ##  Authorization code + PKCE
 
@@ -89,7 +89,10 @@ Machine-to-machine. No user involved
 - Authorization server -> Server that issues access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
 - Resource server -> Server that hosts the protected data and accepts access tokens to allow access to the data.
 
-Note: don't keep secrets on client side: mobile app, SPA application, etc.
+Notes: 
+
+- Confidential client is protected/private. Example: server side
+- Public client is unprotected/public. Don't keep secrets on client side. Examples: mobile app and SPA application.
 
 ### Example: User opens a developer dashboard app that displays GitHub activity
 
@@ -103,7 +106,7 @@ Steps:
 1. User opens a developer dashboard app that displays GitHub activity.
 2. The app asks the user to sign in with GitHub
 3. The user is redirected to GitHub’s OAuth Authorization Server and logs in.
-4. GitHub shows a consent screen asking the user to allow the app to access specific data (repositories, commits, issues).
+4. GitHub shows a consent screen asking the user to allow the app to some access specific data (examples: repositories, commits, issues).
 5. After approval, GitHub’s Authorization Server issues an access token to the dashboard app.
 6. The dashboard app uses the access token to call the GitHub API
 7. The Resource Server validates the token and returns the user’s GitHub data.
@@ -143,7 +146,7 @@ Note:
 - Use refresh token to get new access token without user interaction. Treat like password. Don't use refresh token on client side applications or log token.
 - Send bearer token to resource server in Authorization header.
 
-## PKCE. Use everywhere (recommended for client and server apps)
+### PKCE. Use everywhere (recommended for client and server apps)
 
 # OpenId 
 
