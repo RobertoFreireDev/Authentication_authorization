@@ -8,6 +8,27 @@ Http is stateless protocol -> each request is independent, no memory of who you 
 
 Base64 is not encryption. base64 is for http header compatibility
 
+# Building blocks
+
+## Random value/string
+
+- random value generated from a secure source
+
+## Symmetric Cryptography (Shared Secret)
+
+- Fast and simple but requires secure key sharing.
+- Same secret used to encrypt and decrypt
+
+## Asymmetric Cryptography (Public / Private Key)
+
+- Public key (shared)
+- Private key (kept secret)
+
+## Hash Functions
+
+- Deterministic, irreversible function
+- Validate if data has changed
+
 # Basic
 
 Send {user}:{password} in base64 encoded format in Authorization header.
@@ -97,7 +118,7 @@ Notes:
 ### Example: User opens a developer dashboard app that displays GitHub activity
 
 - Resource Owner -> The GitHub user who owns the data and grants permission.
-- Client -> The dashboard application requesting access to the user’s GitHub data
+- Client -> The dashboard application requesting access to the userï¿½s GitHub data
 - Authorization Server -> GitHub OAuth service that authenticates the user and issues access tokens
 - Resource Server -> GitHub API that hosts the data and accepts access tokens to return it
 
@@ -105,11 +126,11 @@ Steps:
 
 1. User opens a developer dashboard app that displays GitHub activity.
 2. The app asks the user to sign in with GitHub
-3. The user is redirected to GitHub’s OAuth Authorization Server and logs in.
+3. The user is redirected to GitHubï¿½s OAuth Authorization Server and logs in.
 4. GitHub shows a consent screen asking the user to allow the app to some access specific data (examples: repositories, commits, issues).
-5. After approval, GitHub’s Authorization Server issues an access token to the dashboard app.
+5. After approval, GitHubï¿½s Authorization Server issues an access token to the dashboard app.
 6. The dashboard app uses the access token to call the GitHub API
-7. The Resource Server validates the token and returns the user’s GitHub data.
+7. The Resource Server validates the token and returns the userï¿½s GitHub data.
 8. The dashboard app displays the GitHub dashboard (repositories, commits, issues) to the user.
 
 ### Build OAuth request
