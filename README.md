@@ -130,11 +130,11 @@ Steps:
 
 1. User opens a developer dashboard app that displays GitHub activity.
 2. The app asks the user to sign in with GitHub
-3. The user is redirected to GitHub�s OAuth Authorization Server and logs in.
+3. The user is redirected to GitHub OAuth Authorization Server and logs in.
 4. GitHub shows a consent screen asking the user to allow the app to some access specific data (examples: repositories, commits, issues).
-5. After approval, GitHub�s Authorization Server issues an access token to the dashboard app.
+5. After approval, GitHub Authorization Server issues an access token to the dashboard app.
 6. The dashboard app uses the access token to call the GitHub API
-7. The Resource Server validates the token and returns the user�s GitHub data.
+7. The Resource Server validates the token and returns the user GitHub data.
 8. The dashboard app displays the GitHub dashboard (repositories, commits, issues) to the user.
 
 ### Build OAuth request
