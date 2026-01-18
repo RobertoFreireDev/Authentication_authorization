@@ -122,7 +122,7 @@ Notes:
 ### Example: User opens a developer dashboard app that displays GitHub activity
 
 - Resource Owner -> The GitHub user who owns the data and grants permission.
-- Client -> The dashboard application requesting access to the user�s GitHub data
+- Client -> The dashboard application requesting access to the user GitHub data
 - Authorization Server -> GitHub OAuth service that authenticates the user and issues access tokens
 - Resource Server -> GitHub API that hosts the data and accepts access tokens to return it
 
