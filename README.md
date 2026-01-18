@@ -105,6 +105,8 @@ Machine-to-machine. No user involved. Example: Scheduled job to sync data
 
 ##  Authorization code + PKCE
 
+![4 agents](4agents.png)
+
 - Resource Owner -> User who owns the data
 - Client -> Application that wants to access the data
 - Authorization server -> Server that issues access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
@@ -114,6 +116,8 @@ Notes:
 
 - Confidential client is protected/private. Example: server side
 - Public client is unprotected/public. Don't keep secrets on client side. Examples: mobile app and SPA application.
+
+![Authorization code + PKCE](authorizatiocodeflow.png)
 
 ### Example: User opens a developer dashboard app that displays GitHub activity
 
